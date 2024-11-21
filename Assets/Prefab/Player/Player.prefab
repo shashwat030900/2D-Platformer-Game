@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5165859467482720495}
   - component: {fileID: 5387034683356540402}
   - component: {fileID: 2508684151833920059}
+  - component: {fileID: 1497714870}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -128,7 +129,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2508684151833920059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,3 +156,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6467062, y: 2.1110735}
   m_EdgeRadius: 0
+--- !u!114 &1497714870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144848331811635454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7707ebdbdd18b246b0d26fafd63635e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5165859467482720495}
+  playerCollider: {fileID: 0}
+  standingColliderSize: {x: 0.6987874, y: 2.111073}
+  crouchingColliderSize: {x: 0.9461729, y: 1.321176}
+  standingColliderOffset: {x: 0.006101638, y: 0.9829593}
+  crouchingColliderOffset: {x: -0.1175911, y: 0.5880105}
+  speed: 1
+  jump: 0.1
