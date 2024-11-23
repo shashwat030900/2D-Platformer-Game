@@ -9,10 +9,16 @@ public class PlayerDeathController : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerController>() != null)
         {
-            Debug.Log("PLayer died.");
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex);
+            
+            HandelPlayerDeath();
         }
+    }
+
+    public static void HandelPlayerDeath()
+    {
+        Debug.Log("PLayer died.");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
 
