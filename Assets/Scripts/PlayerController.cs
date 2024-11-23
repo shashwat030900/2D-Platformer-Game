@@ -1,4 +1,5 @@
-    using System.Collections;
+using System;
+using System.Collections;
     using System.Collections.Generic;
     using System.Runtime.CompilerServices;
     using UnityEngine;
@@ -14,8 +15,10 @@
         public float speed;
         private Rigidbody2D rb2d;
         public float jump;
+        public ScoreController scoreController;
         private void Awake()
         {
+            
             Debug.Log("Player controller awake");
             rb2d = gameObject.GetComponent<Rigidbody2D>();
         }
@@ -88,4 +91,10 @@
                 animator.SetBool("Jump", false);
             }
         }
+
+    public void PickUpkey()
+    {
+        Debug.Log("Player picked up the key.");
+        scoreController.IncreaseScore(10); 
     }
+}

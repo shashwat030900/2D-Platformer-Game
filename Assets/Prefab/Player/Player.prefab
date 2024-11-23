@@ -176,3 +176,4 @@ MonoBehaviour:
   crouchingColliderOffset: {x: -0.1175911, y: 0.5880105}
   speed: 1
   jump: 0.1
+  scoreController: {fileID: 0}
