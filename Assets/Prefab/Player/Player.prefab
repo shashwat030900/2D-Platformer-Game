@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 5387034683356540402}
   - component: {fileID: 2508684151833920059}
   - component: {fileID: 1497714870}
+  - component: {fileID: 8355352471506243337}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -225,7 +226,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.032142222, y: 0.9829593}
@@ -253,6 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7707ebdbdd18b246b0d26fafd63635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameoverController: {fileID: 0}
   animator: {fileID: 5165859467482720495}
   playerCollider: {fileID: 2508684151833920059}
   standingColliderSize: {x: 0.6987874, y: 2.111073}
@@ -262,3 +264,20 @@ MonoBehaviour:
   speed: 1
   jump: 0.1
   scoreController: {fileID: 0}
+  playerRigidbody: {fileID: 5387034683356540402}
+  playerAnimator: {fileID: 0}
+  hearts: []
+  deathUIPanel: {fileID: 0}
+--- !u!114 &8355352471506243337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144848331811635454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1981bffb4ee214e99cbc2b885ef7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingHealth: 3
