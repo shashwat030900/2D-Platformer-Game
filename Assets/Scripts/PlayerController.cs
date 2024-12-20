@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameOverControlller gameoverController;
+    public GameOverController gameOverController;
     public Animator animator;
     public BoxCollider2D playerCollider;
     public Vector2 standingColliderSize = new Vector2(0.6987874f, 2.111073f);
@@ -16,57 +17,71 @@ public class PlayerController : MonoBehaviour
     public Vector2 crouchingColliderOffset = new Vector2(-0.1175911f, 0.5880105f);
     public float speed;
     private Rigidbody2D rb2d;
-    public float jump;
+    [Header("Speed")]
+    [SerializeField] private float jump;
     public ScoreController scoreController;
-    //public int maxHealth = 3;
-    //public int currentHealth;
-    [SerializeField] private Rigidbody2D playerRigidbody;
-    [SerializeField] private Animator playerAnimator;
-    [SerializeField] private SpriteRenderer[] hearts;
-    [SerializeField] private GameObject deathUIPanel;
-    private int health;
-    private Camera mainCamera;
-    private bool isDead = false;
+    
 
+    /// <summary>
+    /// Health
+    /// </summary>
+    private bool isDead = false;
+    public Image heartImage;
+    public float maxHealthFillAmount = 1f;
+    public float healthFillAmount;
+    public float damageAmount = 0.1f;
+    public Animator playerAnimator;
+    public GameObject deathUIPanel;
+    [SerializeField]  private int health;
+    [SerializeField] private Image[] hearts; 
 
     private void Start()
     {
         health = hearts.Length;
-        mainCamera = Camera.main;
     }
 
     public void DecreaseHealth()
     {
-        health--;
-
-        HandelHealthUI();
+        health--; 
+        // call a function to running health UI.
+        ReduceHealthUI();   
         if (health <= 0)
         {
-            PlayDeathAnimation();
-            PlayerDeath();
+            Debug.Log("Health decreased, player is dead.");
+            Die();
         }
     }
 
-    public void PlayerDeath()
-    {
-        isDead = true;
-        mainCamera.transform.parent = null;
-        deathUIPanel.gameObject.SetActive(true);
-        playerRigidbody.constraints = RigidbodyConstraints2D.FreezePosition;
-        //gameoverController.ReloadLevel();
-    }
-    public void PlayDeathAnimation()
-    {
-        playerAnimator.SetTrigger("Die");
-    }
-
-    public void HandelHealthUI()
+    private void ReduceHealthUI()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].color = (i < health) ? Color.red : Color.black;
         }
+        
     }
+
+    private void Die()
+    {
+       
+        playerAnimator.SetTrigger("Die");
+        StartCoroutine(WaitTimer());
+        //gameOverController.PlayerDied();
+
+       
+    }
+
+
+    private IEnumerator WaitTimer()
+    {
+        yield return new WaitForSeconds(1.8f);
+        deathUIPanel.SetActive(true);
+        //SceneManager.LoadScene(1);
+
+        this.enabled = false;
+    }
+
+    
     private void Awake()
     {
 
@@ -86,11 +101,16 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        // bool jump = Input.GetAxisRaw("Vertical") > 0;
-        //animator.SetBool("Jump", jump);
-
-        bool crouch = Input.GetKey(KeyCode.LeftControl);
-        CrouchMovement(crouch);
+        
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            CrouchMovement(true);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            CrouchMovement(false);
+        }
+        
 
     }
     private void MoveCharacter(float horizontal, float vertical)
@@ -152,35 +172,7 @@ public class PlayerController : MonoBehaviour
         scoreController.IncreaseScore(10);
     }
 
-    public void KillPlayer()
-    {
-        Debug.Log("Player killed by enemy.");
-        animator.SetBool("Death", true);
-        Destroy(gameObject);
-        gameoverController.PlayerDied();
-    }
-    //if (animator != null)
-    //{
-    //  animator.SetBool("Death", true);
-    //    Debug.Log("Death parameter set to true.");
-    // }
-    //else
-    // {
-    //    Debug.LogError("Animator component not assigned.");
-    // }
-    //PlayerDeathController.HandelPlayerDeath();
-    //ReloadLevel();
-
-
-    // public void TakeDamage(int amount)
-    // {
-    //     if(currentHealth <= 0)
-    //     {
-    //         Debug.Log("Player killed by enemy.");
-    //         animator.SetBool("Death", true);
-    //         ReloadLevel();
-    //    }
-    // }
+    
 }
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameOverControlller : MonoBehaviour
+public class GameOverControlller2 : MonoBehaviour
 {
     public Button buttonRestart;
 
