@@ -14,11 +14,9 @@ GameObject:
   - component: {fileID: 7100000870537292098}
   - component: {fileID: 764046635231381131}
   - component: {fileID: 2903364547282686982}
-  - component: {fileID: 6611000999655361465}
-  - component: {fileID: 2903364546363786382}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,7 +176,7 @@ MonoBehaviour:
   standingColliderOffset: {x: 0.006101638, y: 0.9829593}
   crouchingColliderOffset: {x: -0.1175911, y: 0.5880105}
   speed: 3
-  jump: 0.1
+  jump: 0.05
   scoreController: {fileID: 0}
   heartImage: {fileID: 0}
   maxHealthFillAmount: 1
@@ -186,31 +184,9 @@ MonoBehaviour:
   damageAmount: 0.1
   playerAnimator: {fileID: 8068765516746943583}
   deathUIPanel: {fileID: 0}
---- !u!114 &6611000999655361465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283282888926348366}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1981bffb4ee214e99cbc2b885ef7d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartingHealth: 3
---- !u!114 &2903364546363786382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283282888926348366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef95b9cb5a44d7f41b04795b323c28f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  player: {fileID: 283282888926348366}
-  deathAnimationName: Die
+  health: 4
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

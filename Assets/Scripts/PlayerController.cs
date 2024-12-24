@@ -6,8 +6,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Controls the player character.
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
+    // Public variables
     public GameOverController gameOverController;
     public Animator animator;
     public BoxCollider2D playerCollider;
@@ -16,35 +20,39 @@ public class PlayerController : MonoBehaviour
     public Vector2 standingColliderOffset = new Vector2(0.006101638f, 0.9829593f);
     public Vector2 crouchingColliderOffset = new Vector2(-0.1175911f, 0.5880105f);
     public float speed;
-    private Rigidbody2D rb2d;
-    [Header("Speed")]
-    [SerializeField] private float jump;
     public ScoreController scoreController;
-    
-
-    /// <summary>
-    /// Health
-    /// </summary>
-    private bool isDead = false;
     public Image heartImage;
     public float maxHealthFillAmount = 1f;
     public float healthFillAmount;
     public float damageAmount = 0.1f;
     public Animator playerAnimator;
     public GameObject deathUIPanel;
-    [SerializeField]  private int health;
-    [SerializeField] private Image[] hearts; 
 
+    [Header("Speed")]
+    [SerializeField] private float jump;
+    [SerializeField] private int health;
+    [SerializeField] private Image[] hearts;
+
+    // Private variables
+    private Rigidbody2D rb2d;
+    private bool isDead = false;
+
+    /// <summary>
+    /// Initializes the player's health and other settings at the start of the game.
+    /// </summary>
     private void Start()
     {
         health = hearts.Length;
     }
 
+    /// <summary>
+    /// Decreases the player's health and updates the health UI.
+    /// If health is depleted, triggers the player's death.
+    /// </summary>
     public void DecreaseHealth()
     {
-        health--; 
-        // call a function to running health UI.
-        ReduceHealthUI();   
+        health--;
+        ReduceHealthUI();
         if (health <= 0)
         {
             Debug.Log("Health decreased, player is dead.");
@@ -52,43 +60,50 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the health UI to reflect the player's current health.
+    /// </summary>
     private void ReduceHealthUI()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
             hearts[i].color = (i < health) ? Color.red : Color.black;
         }
-        
     }
 
+    /// <summary>
+    /// Triggers the player's death sequence.
+    /// </summary>
     private void Die()
     {
-       
         playerAnimator.SetTrigger("Die");
         StartCoroutine(WaitTimer());
         //gameOverController.PlayerDied();
-
-       
     }
 
-
+    /// <summary>
+    /// Waits for a specified time, then activates the death UI panel.
+    /// </summary>
     private IEnumerator WaitTimer()
     {
         yield return new WaitForSeconds(1.8f);
         deathUIPanel.SetActive(true);
         //SceneManager.LoadScene(1);
-
         this.enabled = false;
     }
 
-    
+    /// <summary>
+    /// Initializes the Rigidbody2D component and logs a message when the player is awakened.
+    /// </summary>
     private void Awake()
     {
-
         Debug.Log("Player controller awake");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
     }
-    
+
+    /// <summary>
+    /// Updates the player's movement and actions every frame.
+    /// </summary>
     private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -97,11 +112,9 @@ public class PlayerController : MonoBehaviour
         MoveCharacter(horizontal, vertical);
         if (isDead)
         {
-            return;  
+            return;
         }
 
-
-        
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             CrouchMovement(true);
@@ -110,13 +123,15 @@ public class PlayerController : MonoBehaviour
         {
             CrouchMovement(false);
         }
-        
-
     }
+
+    /// <summary>
+    /// Moves the player character based on horizontal and vertical input.
+    /// </summary>
     private void MoveCharacter(float horizontal, float vertical)
     {
         Vector3 position = transform.position;
-        position.x = position.x + horizontal * speed * Time.deltaTime;
+        position.x += horizontal * speed * Time.deltaTime;
         transform.position = position;
 
         if (vertical > 0)
@@ -125,6 +140,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles the player's crouch movement.
+    /// </summary>
     private void CrouchMovement(bool crouch)
     {
         animator.SetBool("Crouch", crouch);
@@ -141,6 +159,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Updates the player's movement animation based on input.
+    /// </summary>
     public void PlayerMovementAnimation(float horizontal, float vertical)
     {
         animator.SetFloat("Speed", Mathf.Abs(horizontal));
@@ -155,24 +176,15 @@ public class PlayerController : MonoBehaviour
         }
         transform.localScale = scale;
 
-        //Jump
-        if (vertical > 0)
-        {
-            animator.SetBool("Jump", true);
-        }
-        else
-        {
-            animator.SetBool("Jump", false);
-        }
+        animator.SetBool("Jump", vertical > 0);
     }
 
+    /// <summary>
+    /// Increases the player's score when a key is picked up.
+    /// </summary>
     public void PickUpkey()
     {
         Debug.Log("Player picked up the key.");
         scoreController.IncreaseScore(10);
     }
-
-    
 }
-
-

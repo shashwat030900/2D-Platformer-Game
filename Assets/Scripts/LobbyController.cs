@@ -19,4 +19,8 @@ public class LobbyController : MonoBehaviour
        // SceneManager.LoadScene(1);
        LevelSelection.SetActive(true);  
     }
+
+    public void Quit(){
+        //WEBGL.Quit();
+    }
 }
