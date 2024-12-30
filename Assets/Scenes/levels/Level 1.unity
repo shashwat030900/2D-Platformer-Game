@@ -1055,6 +1055,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1b3399b10ff0de46b00aa4c2ea083cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &929720756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929720758}
+  - component: {fileID: 929720757}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &929720757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929720756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eebed227347b8e540b3beb3e55bd2ff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerJump
+    clip: {fileID: 8300000, guid: c02e57faaa9e1b44eb80c944f3579318, type: 3}
+    Volume: 0.841
+    Pitch: 0.61
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerGameOver
+    clip: {fileID: 8300000, guid: ac61a622af80f6448a2cea1a3f5f9b46, type: 3}
+    Volume: 0.841
+    Pitch: 0.61
+    loop: 0
+    source: {fileID: 0}
+  - name: BGmusic
+    clip: {fileID: 8300000, guid: ea2ab35507e3baa4f813dfa9e25ef7d7, type: 3}
+    Volume: 0.305
+    Pitch: 0.85
+    loop: 1
+    source: {fileID: 0}
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 68c65aec95671b549be3b900cc305b1e, type: 3}
+    Volume: 0.305
+    Pitch: 0.85
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &929720758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929720756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.601162, y: 23.932663, z: -0.047596067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1016916462 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1074979026788673416, guid: 940af43dc402e274cbdc0c2239264bef,

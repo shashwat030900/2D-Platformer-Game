@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.8f);
         deathUIPanel.SetActive(true);
+        FindObjectOfType<SoundManager>().Play("PlayerGameOver");
         //SceneManager.LoadScene(1);
         this.enabled = false;
     }
@@ -99,6 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player controller awake");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
+        FindObjectOfType<SoundManager>().Play("BGmusic");
     }
 
     /// <summary>
@@ -137,6 +139,7 @@ public class PlayerController : MonoBehaviour
         if (vertical > 0)
         {
             rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Impulse);
+            FindObjectOfType<SoundManager>().Play("PlayerJump");
         }
     }
 

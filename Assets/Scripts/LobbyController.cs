@@ -12,12 +12,14 @@ public class LobbyController : MonoBehaviour
     private void Awake()
     {
         buttonPlay.onClick.AddListener(PlayGame);
+        FindObjectOfType<SoundManager>().Play("ButtonClick");
     }
 
     private void PlayGame()
     {
        // SceneManager.LoadScene(1);
        LevelSelection.SetActive(true);  
+       
     }
 
     public void Quit(){
