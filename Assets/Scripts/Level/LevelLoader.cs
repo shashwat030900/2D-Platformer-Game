@@ -20,7 +20,7 @@ using UnityEngine.SceneManagement;
         private void onClick()
         {
             LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(LevelName);
-             //FindObjectOfType<SoundManager>().Play("ButtonClick");
+            FindObjectOfType<SoundManager>().Play("ButtonClick");
             switch (levelStatus)
         {
 

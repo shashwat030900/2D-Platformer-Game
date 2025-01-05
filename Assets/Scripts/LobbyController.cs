@@ -19,7 +19,7 @@ public class LobbyController : MonoBehaviour
     {
        // SceneManager.LoadScene(1);
        LevelSelection.SetActive(true);  
-       //FindObjectOfType<SoundManager>().Play("ButtonClick");
+       FindObjectOfType<SoundManager>().Play("ButtonClick");
        Debug.Log("Button clicked");
        
     }
