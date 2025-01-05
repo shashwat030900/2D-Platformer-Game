@@ -14,11 +14,13 @@ using UnityEngine.SceneManagement;
         {
             button = GetComponent<Button>();
             button.onClick.AddListener(onClick);
+            
         }
 
         private void onClick()
         {
             LevelStatus levelStatus = LevelManager.Instance.GetLevelStatus(LevelName);
+             //FindObjectOfType<SoundManager>().Play("ButtonClick");
             switch (levelStatus)
         {
 

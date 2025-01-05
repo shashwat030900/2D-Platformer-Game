@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         health = hearts.Length;
+        FindObjectOfType<SoundManager>().Play("BGmusic");
     }
 
     /// <summary>
@@ -100,7 +101,8 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player controller awake");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
-        FindObjectOfType<SoundManager>().Play("BGmusic");
+        
+        Debug.Log("bg music played");
     }
 
     /// <summary>
@@ -140,6 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             rb2d.AddForce(new Vector2(0f, jump), ForceMode2D.Impulse);
             FindObjectOfType<SoundManager>().Play("PlayerJump");
+            
         }
     }
 

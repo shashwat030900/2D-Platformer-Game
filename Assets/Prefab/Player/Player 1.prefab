@@ -176,7 +176,6 @@ MonoBehaviour:
   standingColliderOffset: {x: 0.006101638, y: 0.9829593}
   crouchingColliderOffset: {x: -0.1175911, y: 0.5880105}
   speed: 3
-  jump: 0.05
   scoreController: {fileID: 0}
   heartImage: {fileID: 0}
   maxHealthFillAmount: 1
@@ -184,6 +183,7 @@ MonoBehaviour:
   damageAmount: 0.1
   playerAnimator: {fileID: 8068765516746943583}
   deathUIPanel: {fileID: 0}
+  jump: 0.05
   health: 4
   hearts:
   - {fileID: 0}
