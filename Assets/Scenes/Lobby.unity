@@ -560,10 +560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level1: ' Level 1'
   Levels:
-  - Level1
-  - Level2
-  - Level3
-  - Level4
+  - Level 1
+  - Level 2
+  - Level 3
+  - Level 4
 --- !u!4 &681224143
 Transform:
   m_ObjectHideFlags: 0

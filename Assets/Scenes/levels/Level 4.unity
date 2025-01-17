@@ -458,6 +458,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 163509607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &163509609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8805624671300013253, guid: d81d1ae323b853d498fa5dce5bb8d7b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 163509607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &163509610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8805624671300013249, guid: d81d1ae323b853d498fa5dce5bb8d7b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 163509607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163509609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b3399b10ff0de46b00aa4c2ea083cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202234527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4784765704547553632, guid: 5de7fba64ff929f45b9996b99939101e,
@@ -2366,6 +2384,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
         type: 3}
+      propertyPath: heartImage
+      value: 
+      objectReference: {fileID: 1087112055}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: deathUIPanel
+      value: 
+      objectReference: {fileID: 163509609}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: scoreController
+      value: 
+      objectReference: {fileID: 1615506764}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: gameOverController
+      value: 
+      objectReference: {fileID: 163509610}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
       objectReference: {fileID: 1087112055}
@@ -2441,6 +2479,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74e3675b15e3e424ea848ea1121cf190, type: 3}
+--- !u!1 &1091549250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091549252}
+  - component: {fileID: 1091549251}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1091549251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091549250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7e0ee42fc84ab4d84bb84541e7f1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1: Level 1
+  Levels:
+  - Level 1
+  - Level 2
+  - Level 3
+  - Level 4
+  - Level 5
+--- !u!4 &1091549252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091549250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1176137801
 GameObject:
   m_ObjectHideFlags: 0

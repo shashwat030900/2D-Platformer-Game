@@ -458,6 +458,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 163509607}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &163509609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8805624671300013253, guid: d81d1ae323b853d498fa5dce5bb8d7b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 163509607}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &163509610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8805624671300013249, guid: d81d1ae323b853d498fa5dce5bb8d7b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 163509607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163509609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b3399b10ff0de46b00aa4c2ea083cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202234527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4784765704547553632, guid: 5de7fba64ff929f45b9996b99939101e,
@@ -2320,6 +2338,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: heartImage
+      value: 
+      objectReference: {fileID: 1087112055}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: deathUIPanel
+      value: 
+      objectReference: {fileID: 163509609}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: scoreController
+      value: 
+      objectReference: {fileID: 1615506764}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: gameOverController
+      value: 
+      objectReference: {fileID: 163509610}
     - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
         type: 3}
       propertyPath: hearts.Array.data[0]

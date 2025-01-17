@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+//using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Jump");
+        float vertical = Input.GetAxis("Jump");
         PlayerMovementAnimation(horizontal, vertical);
         MoveCharacter(horizontal, vertical);
         if (isDead)
@@ -134,9 +134,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void MoveCharacter(float horizontal, float vertical)
     {
-        Vector3 position = transform.position;
+        /* Vector3 position = transform.position;
         position.x += horizontal * speed * Time.deltaTime;
-        transform.position = position;
+        transform.position = position; */
+        Vector2 velocity = rb2d.velocity;
+        velocity.x = horizontal*speed;
+        rb2d.velocity = velocity;
 
         if (vertical > 0)
         {

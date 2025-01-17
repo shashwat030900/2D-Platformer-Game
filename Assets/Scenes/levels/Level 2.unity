@@ -1430,12 +1430,18 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1218171009}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1218171012}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1b3399b10ff0de46b00aa4c2ea083cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1218171012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8805624671300013253, guid: d81d1ae323b853d498fa5dce5bb8d7b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1218171009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252813589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1648,11 @@ PrefabInstance:
       propertyPath: heartImage
       value: 
       objectReference: {fileID: 701483801}
+    - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
+        type: 3}
+      propertyPath: deathUIPanel
+      value: 
+      objectReference: {fileID: 1218171012}
     - target: {fileID: 2903364547282686982, guid: 74e3675b15e3e424ea848ea1121cf190,
         type: 3}
       propertyPath: scoreController
@@ -2799,6 +2810,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa3b64f8394bde48b2cc12fce3e40bb, type: 3}
+--- !u!1 &2070516254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2070516256}
+  - component: {fileID: 2070516255}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2070516255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070516254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7e0ee42fc84ab4d84bb84541e7f1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1: Level 1
+  Levels:
+  - Level 1
+  - Level 2
+  - Level 3
+  - Level 4
+  - Level 5
+--- !u!4 &2070516256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070516254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072041490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,6 +3253,8 @@ GameObject:
   - component: {fileID: 2128193505}
   - component: {fileID: 2128193504}
   - component: {fileID: 2128193506}
+  - component: {fileID: 2128193508}
+  - component: {fileID: 2128193507}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -4016,10 +4080,127 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!66 &2128193507
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128193502}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2128193506}
+    m_ColliderPaths:
+    - - X: 715000000
+        Y: 105000000
+      - X: 605000000
+        Y: 105000000
+      - X: 605000000
+        Y: 85000000
+      - X: 715000000
+        Y: 85000000
+    - - X: 425000000
+        Y: 95000000
+      - X: 305000000
+        Y: 95000000
+      - X: 305000000
+        Y: 75000000
+      - X: 425000000
+        Y: 75000000
+    - - X: 265000000
+        Y: 25000000
+      - X: 105000000
+        Y: 25000000
+      - X: 105000000
+        Y: 5000000
+      - X: 265000000
+        Y: 5000000
+    - - X: 885000000
+        Y: 15000000
+      - X: 755000000
+        Y: 15000000
+      - X: 755000000
+        Y: -5000000
+      - X: 885000000
+        Y: -5000000
+    - - X: 565000000
+        Y: 15000000
+      - X: 465000000
+        Y: 15000000
+      - X: 465000000
+        Y: -5000000
+      - X: 565000000
+        Y: -5000000
+    - - X: 65000000
+        Y: -25000000
+      - X: -55000000
+        Y: -25000000
+      - X: -55000000
+        Y: -45000000
+      - X: 65000000
+        Y: -45000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 71.49997, y: 8.5}
+      - {x: 71.49997, y: 10.5}
+      - {x: 60.5, y: 10.49997}
+      - {x: 60.500034, y: 8.5}
+    - - {x: 42.499973, y: 7.5}
+      - {x: 42.499973, y: 9.5}
+      - {x: 30.5, y: 9.49997}
+      - {x: 30.500029, y: 7.5}
+    - - {x: 26.499971, y: 0.5}
+      - {x: 26.499971, y: 2.5}
+      - {x: 10.5, y: 2.499971}
+      - {x: 10.50003, y: 0.5}
+    - - {x: 88.49997, y: -0.5}
+      - {x: 88.49997, y: 1.5}
+      - {x: 75.5, y: 1.4999707}
+      - {x: 75.50003, y: -0.5}
+    - - {x: 56.49997, y: -0.5}
+      - {x: 56.49997, y: 1.5}
+      - {x: 46.5, y: 1.4999707}
+      - {x: 46.50003, y: -0.5}
+    - - {x: 6.499971, y: -4.5}
+      - {x: 6.499971, y: -2.5}
+      - {x: -5.5, y: -2.5000293}
+      - {x: -5.499971, y: -4.5}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &2128193508
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128193502}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1848962087140976580
 PrefabInstance:
   m_ObjectHideFlags: 0

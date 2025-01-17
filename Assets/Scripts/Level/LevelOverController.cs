@@ -14,6 +14,7 @@ public class LevelOverController : MonoBehaviour
             if(LevelManager.Instance != null){
                 LevelManager.Instance.MarkCurrentLevelComplete();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                
             }
             else{
                 Debug.LogError("LevelManager instance is null. Ensure LevelManager is present in the scene.");
